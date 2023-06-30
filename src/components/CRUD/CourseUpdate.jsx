@@ -76,7 +76,7 @@ const CourseUpdate = () => {
       v13,
       v14,
     };
-    fetch(`http://localhost:5000/courses/${_id}`, {
+    fetch(`https://physics-server.vercel.app/courses/${_id}`, {
       method: "PUT",
       headers: {
         "content-Type": "application/json",

@@ -51,7 +51,7 @@ const AddCourse = () => {
       v13,
       v14,
     };
-    fetch("http://localhost:5000/courses", {
+    fetch("https://physics-server.vercel.app/courses", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
