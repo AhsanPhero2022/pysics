@@ -43,7 +43,7 @@ const Header = () => {
     <nav className="bg-gray-800  ">
       <div className="lg:flex justify-between">
         <div>
-          <div className="max-w-8xl mx-auto    sm:px-6 lg:px-20 ">
+          <div className="max-w-8xl mx-auto    sm:px-6 lg:px-12 ">
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center">
                 <Link className="flex-shrink-0 ">
@@ -72,18 +72,26 @@ const Header = () => {
                     ) : (
                       ""
                     )}
-                    {/* <Link
-                      to="/demolecture"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      DemoLecture
-                    </Link> */}
-                    {/* <Link
-                      to="/Lecture"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      CourseVideo
-                    </Link> */}
+                    {useAdmin?.role == "admin" ? (
+                      <Link
+                        to="/addCourse"
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        AddCourse
+                      </Link>
+                    ) : (
+                      ""
+                    )}
+                    {useAdmin?.role == "admin" ? (
+                      <Link
+                        to="/allCourses"
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
+                        AllCourses
+                      </Link>
+                    ) : (
+                      ""
+                    )}
                     <Link
                       to="/vector"
                       className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -199,20 +207,27 @@ const Header = () => {
             to="/allUser"
             className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
           >
-            Dashboard
+            AllUser
           </Link>
-          {/* <Link
-            to="/demolecture"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          >
-            DemoLecture
-          </Link>
+          <div>
+            {useAdmin?.role == "admin" ? (
+              <Link
+                to="/addCourse"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                AddCourse
+              </Link>
+            ) : (
+              ""
+            )}
+          </div>
           <Link
             to="/Lecture"
             className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
           >
             CourseVideo
-          </Link> */}
+          </Link>
+
           <Link
             to="/vector"
             className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
@@ -231,7 +246,6 @@ const Header = () => {
           >
             YouTube
           </Link>
-
           <div className="text-white">
             {user ? (
               <div className="my-2 flex gap-2">

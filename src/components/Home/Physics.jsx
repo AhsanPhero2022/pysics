@@ -7,10 +7,10 @@ const Physics = () => {
   return (
     <>
       <div className="bg-indigo-500 ">
-        <h2 className="text-center text-2xl font-semibold m-5 p-5">
-          Why RA Physics?
+        <h2 className="text-center text-2xl font-semibold m-5 p-5 text-white">
+          RA Physics Video?
         </h2>
-        <div className="flex justify-center gap-10 mt-5 lg:flex-cols-4 py-8  lg:py-5">
+        <div className="grid lg:grid-cols-3 gap-6  mt-5 py-8  lg:py-5">
           <div className="card  card-compact w-60 bg-base-100  shadow-xl">
             <figure>
               <img

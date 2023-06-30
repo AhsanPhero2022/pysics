@@ -18,6 +18,9 @@ import YouTube from "./components/YouTube.jsx";
 import AuthProvider from "./components/Provider/Provider.jsx";
 import PrivateRoute from "./components/Private/PrivateRoute.jsx";
 import AllUsers from "./components/AllUsers/AllUsers.jsx";
+import AddCourse from "./components/CRUD/AddCourse.jsx";
+import AllCourses from "./components/CRUD/AllCourses.jsx";
+import CourseUpdate from "./components/CRUD/CourseUpdate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +83,18 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/addCourse",
+        element: <AddCourse></AddCourse>,
+      },
+      {
+        path: "/allCourses",
+        element: <AllCourses></AllCourses>,
+      },
+      {
+        path: "/courseUpdate/:id",
+        element: <CourseUpdate></CourseUpdate>,
+      },
     ],
   },
 ]);
@@ -87,7 +102,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <div className="max-w-7xl mx-auto">
+        <RouterProvider router={router} />
+      </div>
     </AuthProvider>
   </React.StrictMode>
 );
